@@ -4,6 +4,10 @@ public class TestClass {
             cont.Name = 'Test';
             update cont;
         }
+        for(Account acc: [SELECT Id,Name from Account]) {
+            acc.Name = 'Error';
+            update acc;
+        }
         return [SELECT ID From Contact];
     }
 }
